@@ -386,9 +386,18 @@ class AdminController
     {
 		// if admin is not logged in, he/she shouldnt be here!
 		$this->checkLogin();
-		
+
 		// get pdo object
 		$pdo = $this->container['db'];
+		
+		// does this model id exist?
+		$stmt = $pdo->prepare('SELECT model_id FROM vehicles WHERE model_id = :model_id LIMIT 1');
+		$stmt->execute([ 'model_id' => (int) $args['id'] ]);
+		$result = $stmt->fetch();
+		if(!$result) 
+		{
+			die("Model id does not exist");
+		}		
 
 		// get post data
 		$form = (!empty($_POST['form'])) ? $_POST['form'] : "";
