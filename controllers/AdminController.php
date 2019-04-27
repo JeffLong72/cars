@@ -20,7 +20,7 @@ class AdminController
     /**
      * @var Stores the path to the image upload folder
      */	
-	protected $upload_folder;
+    protected $upload_folder;
 
     /**
      * Store the container during class construction.
