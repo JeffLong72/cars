@@ -396,7 +396,7 @@ class AdminController
 		$result = $stmt->fetch();
 		if(!$result) 
 		{
-			die("Model id does not exist");
+			die("Model id does not exist"); 
 		}		
 
 		// get post data
