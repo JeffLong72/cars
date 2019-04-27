@@ -1,0 +1,108 @@
+{% include 'header.twig' %}
+
+<h1>Admin > Cars > Add</h1>
+
+<div style="float:right; margin-left:10px;">
+	<button id="doLogout" onclick="doLogout()">
+		Logout
+	</button>
+</div>
+
+<div style="float:right;">
+	<button id="viewAllCars" onclick="viewAllCars()">
+		View All Cars
+	</button>
+</div>
+
+<div style="clear:both;"></div>
+
+<div>
+
+<p>{{ message|raw }}</p>
+
+	<form method="post" name="admin_login" action="/admin/cars/add" enctype="multipart/form-data">
+
+		<div>
+			<label for="form[model_id]">Model ID:</label><br>
+			<input type="text" name="form[model_id]" value="{{ car.model_id }}">
+		</div>
+		
+		<div>
+			<label for="form[model_make_id]">Make:</label><br>
+			<input type="text" name="form[model_make_id]" value="{{ car.model_make_id }}">
+		</div>
+		
+		<div>
+			<label for="form[model_name]">Name:</label><br>
+			<input type="text" name="form[model_name]" value="{{ car.model_name }}">
+		</div>		
+		
+		<div>
+			<label for="form[model_trim]">Trim:</label><br>
+			<input type="text" name="form[model_trim]" value="{{ car.model_trim }}">
+		</div>				
+		
+		<div>
+			<label for="form[model_year]">Year:</label><br>
+			<input type="text" name="form[model_year]" value="{{ car.model_year }}">
+		</div>			
+		
+		<div>
+			<label for="form[model_body]">Body:</label><br>
+			<input type="text" name="form[model_body]" value="{{ car.model_body }}">
+		</div>			
+		
+		<div>
+			<label for="form[model_engine_position]">Engine position:</label><br>
+			<input type="text" name="form[model_engine_position]" value="{{ car.model_engine_position }}">
+		</div>		
+		
+		<div>
+			<label for="form[model_engine_type]">Engine type:</label><br>
+			<input type="text" name="form[model_engine_type]" value="{{ car.model_engine_type }}">
+		</div>		
+
+		<div>
+			<label for="form[model_engine_compression]">Engine compression:</label><br>
+			<input type="text" name="form[model_engine_compression]" value="{{ car.model_engine_compression }}">
+		</div>	
+
+		<div>
+			<label for="form[model_engine_fuel]">Fuel:</label><br>
+			<input type="text" name="form[model_engine_fuel]" value="{{ car.model_engine_fuel }}">
+		</div>	
+
+		<div>
+			<label for="form[make_country]">Make country:</label><br>
+			<input type="text" name="form[make_country]" value="{{ car.make_country }}">
+		</div>	
+		
+		<div>
+			<label for="form[model_weight_kg]">Weight (kg):</label><br>
+			<input type="text" name="form[model_weight_kg]" value="{{ car.model_weight_kg }}">
+		</div>			
+
+		<div>
+			<label for="form[model_transmission_type]">Transmission:</label><br>
+			<input type="text" name="form[model_transmission_type]" value="{{ car.model_transmission_type }}">
+		</div>	
+
+		<div>
+			<label for="form[price]">Price:</label><br>
+			<input type="text" name="form[price]" value="{{ car.price }}">
+		</div>
+
+		<div>
+			<label for="form[file]">Image:</label><br>
+			<input type="file" name="form[file]" value="{{ car.image }}">
+		</div>
+
+		<div>
+			<input type="submit" name="submit" value="Submit">
+		</div>	
+		
+	</form>
+
+</div>
+
+{% include 'footer.twig' %}

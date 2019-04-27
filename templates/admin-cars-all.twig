@@ -1,0 +1,143 @@
+{% include 'header.twig' %}
+
+<h1>Admin > Cars > All</h1>
+
+<div style="float:right; margin-left:10px;">
+	<button id="doLogout" onclick="doLogout()">
+		Logout
+	</button>
+</div>
+
+<div style="float:right; margin-left:10px;">
+	<button  onclick="addNewCar()">
+		Add New Car
+	</button>
+</div>
+
+<div id="update_cars_button" style="float:right;">
+	<button id="updateCars" onclick="updateCars()">
+		Update Cars
+	</button>
+</div>
+
+<div style="clear:both;"></div>
+
+<div>
+	<table style="margin-top:10px;" border="1">
+		<tr>
+			<th>
+				Image
+			</th>
+			<th>
+				Id
+			</th>
+			<th>
+				Make
+			</th>
+			<th>
+				Name
+			</th>
+			<th>
+				Trim
+			</th>	
+			<th>
+				Year
+			</th>	
+			<th>
+				Body
+			</th>
+			<th>
+				Engine position
+			</th>
+			<th>
+				Engine type
+			</th>
+			<th>
+				Compression
+			</th>
+			<th>
+				Fuel
+			</th>
+			<th>
+				Country
+			</th>	
+			<th>
+				Weight (kg)
+			</th>
+			<th>
+				Transmission type
+			</th>
+			<th>
+				price
+			</th>
+			<th>
+				&nbsp;
+			</th>			
+		</tr>
+		
+		{% if not cars %}
+		<tr>
+			<td colspan="16">
+				No results... You can Add Car, or Update Cars (API) using the buttons.
+			</td>
+		</tr>
+		{% endif %}
+		
+		{% for car in cars %}
+			<tr>
+				<td>
+					{% if car.image %}
+						<img src="/assets/images/thumbnails/{{ car.image }}">
+					{% endif %}
+				</td>
+				<td>
+					{{ car.model_id }}
+				</td>
+				<td>
+					{{ car.model_make_id }}
+				</td>
+				<td>
+					{{ car.model_name }}
+				</td>
+				<td>
+					{{ car.model_trim }}
+				</td>	
+				<td>
+					{{ car.model_year }}
+				</td>	
+				<td>
+					{{ car.model_body }}
+				</td>
+				<td>
+					{{ car.model_engine_position }}
+				</td>
+				<td>
+					{{ car.model_engine_type }}
+				</td>
+				<td>
+					{{ car.model_engine_compression }}
+				</td>
+				<td>
+					{{ car.model_engine_fuel }}
+				</td>
+				<td>
+					{{ car.make_country }}
+				</td>	
+				<td>
+					{{ car.model_weight_kg }}
+				</td>
+				<td>
+					{{ car.model_transmission_type }}
+				</td>
+				<td>
+					{{ car.price|number_format }}
+				</td>
+				<td>
+					<a href="/admin/cars/edit/{{ car.model_id }}">edit</a>
+				</td>			
+			</tr>
+		{% endfor %}	
+	</table>
+</div>
+
+{% include 'footer.twig' %}

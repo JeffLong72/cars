@@ -1,0 +1,25 @@
+{% include 'header.twig' %}
+
+<h1>Admin Login</h1>
+
+<p>{{ message|raw }}</p>
+
+<form method="post" name="admin_login" action="/admin">
+
+	<div>
+		<label for="form[username]">Your name:</label><br>
+		<input type="text" name="form[username]" value="{{ username }}">
+	</div>
+	
+	<div>
+		<label for="form[password]">Your password:</label><br>
+		<input type="password" name="form[password]" value="{{ password }}">
+	</div>
+	
+	<div>
+		<input type="submit" name="submit" value="Login">
+	</div>	
+	
+</form>
+
+{% include 'footer.twig' %}
