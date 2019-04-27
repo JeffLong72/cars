@@ -10,7 +10,7 @@ Username: admin
 
 Password: randompassword123#
 
-Url: [your-site]/admin
+Url: localhost/admin
 
 Note: The routes.php file assumes you have all files installed under htdocs/
 
