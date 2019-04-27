@@ -10,6 +10,10 @@ Username: admin
 
 Password: randompassword123#
 
+Url: localhost/admin
+
+Note: The routes.php file assumes you have all files installed under htdocs/
+
 # Time taken
 
 Thurs, 2 hrs, install slimframework (http://www.slimframework.com), configure db and create mysql tables, integrate remote Cars API.
