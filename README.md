@@ -14,6 +14,6 @@ Password: randompassword123#
 
 Thurs, 2 hrs, install slimframework (http://www.slimframework.com), configure db and create mysql tables, integrate remote Cars API.
 
-Fri, 1 hrs, develope admin login system
+Fri, 1 hrs, develop admin login system
 
-Sat, 3 hrs, develope add/edit/all cars and image uploads, 1 hr for test and debug
+Sat, 3 hrs, develop add/edit/all cars and image uploads, 1 hr for test and debug
